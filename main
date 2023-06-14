@@ -1,0 +1,29 @@
+list = list()
+data = dict()
+do_you_continue = str
+sum = 0
+woman = []
+while do_you_continue != 'N':
+    data['Nome'] = (str(input('Nome: ')))
+    data['Sexo'] = str(input('Sexo: [F/M] ')).upper()[0].upper()
+    data['idade'] = int(input('Idade: '))
+    sum += data['idade']
+    if data['Sexo'] == 'F':
+        woman.append(data['Nome'])
+    list.append(data.copy())
+    do_you_continue = str(input('Quer continuar? [S/N] ')).upper().strip()[0]
+average = sum/len(list)
+print(f'Ao todo temos {len(list)} pessoas cadastradas')
+print(f'A média de idade é de {average} anos.')
+print(f'As mulheres cadastradas foram {woman}')
+print('Lista das pessoas que estão acima da média: ')
+for i in list:
+    if data['idade'] >= average:
+       for k, v in data.items():
+           print(f'     {k} = {v};', end='')
+
+
+
+
+
+
